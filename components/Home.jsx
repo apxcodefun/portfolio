@@ -1,43 +1,40 @@
-"use client";
+import React from "react";
 import WeatherData from "./Weather";
-import Image from "next/image";
-import Social from "@/components/Social";
-import { ReactTyped } from "react-typed";
+import { FaGithub } from "react-icons/fa";
+import { FaCloudDownloadAlt } from "react-icons/fa";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-8 px-4">
-      {/* Text */}
-      <div className="flex-1 text-center md:text-left space-y-4">
-        <h1 className="text-sky-700 text-5xl font-bold">Selamat Datang</h1>
-        <p className="text-lg">
-          Saya: <span className="font-semibold">Ardiansyah Putra</span>
-        </p>
-        <ReactTyped
-          strings={["Junior Web Developer", "FullStack Developer"]}
-          typeSpeed={40}
-          backSpeed={50}
-          loop
-        />
-        <h2 className="text-2xl font-semibold mt-4">About Me</h2>
-        <p className="text-gray-600">
-          Seorang Junior Web Developer dengan fokus pada pengembangan situs web
-          yang responsif dan user-friendly. Saya selalu berusaha belajar dan
-          berkembang untuk menambah kemampuan saya dan juga untuk menciptakan
-          solusi digital yang kreatif dan efektif. Dengan perhatian pada detail
-          dan pengalaman pengguna.
-        </p>
-        <Social />
-      </div>
-      {/* Image */}
-      <div className="flex-1 flex justify-center">
-        <Image
-          src="/images/profile.jpg"
-          alt="Test"
-          width={500}
-          height={800}
-          className="rounded-box"
-        />
+    <div
+      className="h-screen bg-cover bg-center brightness-50 rounded-badge"
+      style={{ backgroundImage: "url('/images/bg.jpg')" }}
+    >
+      <div className="flex flex-col justify-center h-full text-black pl-8">
+        {/* Kontainer Teks dan Weather */}
+        <div className="flex justify-between items-center w-full">
+          <div className="flex flex-col">
+            <h1 className="text-4xl font-bold mb-2 text-white font-pacifico">
+              Ardiansyah <span className="block text-8xl">Putra</span>
+            </h1>
+            <p className="mb-4 text-white pacifico">Junior Web Developer</p>
+            {/* Tombol */}
+            <div className="flex space-x-7">
+              <button className="btn rounded-badge outline w-[175px]">
+                <FaCloudDownloadAlt />
+                Get My CV
+              </button>
+              <button className="btn outline rounded-badge w-[175px]">
+                <FaGithub />
+                Go To My Github
+              </button>
+            </div>
+          </div>
+
+          {/* Widget WeatherData */}
+          <div className="mr-7">
+            <WeatherData />
+          </div>
+        </div>
       </div>
     </div>
   );

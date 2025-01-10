@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import { CiLocationOn, CiTempHigh, CiCloud } from "react-icons/ci"; // Impor ikon yang diperlukan
-import { FaSun, FaCloud } from "react-icons/fa"; // Impor ikon cerah dan berawan
+import { CiLocationOn } from "react-icons/ci";
+import { FaSun, FaCloud, FaUmbrella } from "react-icons/fa";
 
 const WeatherData = () => {
   const [weather, setWeather] = useState(null);
@@ -10,8 +10,8 @@ const WeatherData = () => {
 
   useEffect(() => {
     const fetchWeather = async () => {
-      const apiKey = process.env.NEXT_PUBLIC_WEATHER_API; // Pastikan ENV key benar
-      const city = "Banda Aceh"; // Nama kota yang benar
+      const apiKey = process.env.NEXT_PUBLIC_WEATHER_API;
+      const city = "Banda Aceh";
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
       try {
@@ -21,11 +21,9 @@ const WeatherData = () => {
         if (response.ok) {
           setWeather(data);
         } else {
-          console.error("Error:", data.message);
           setError(true);
         }
-      } catch (err) {
-        console.error("Fetch error:", err);
+      } catch {
         setError(true);
       } finally {
         setLoading(false);
@@ -35,34 +33,49 @@ const WeatherData = () => {
     fetchWeather();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text-center text-gray-500">Loading...</p>;
   if (error || !weather)
-    return <p>Data tidak tersedia atau terjadi kesalahan.</p>;
+    return <p className="text-center text-red-500">Terjadi kesalahan.</p>;
 
-  // Menentukan ikon berdasarkan kondisi cuaca
   const getWeatherIcon = () => {
     const description = weather.weather[0].description.toLowerCase();
-    if (description.includes("clear")) {
-      return <FaSun style={{ marginRight: "8px" }} />;
-    } else if (description.includes("awan mendung")) {
-      return <FaCloud style={{ marginRight: "8px" }} />;
-    } else if (description.includes("rain")) {
-      return <CiCloud style={{ marginRight: "8px" }} />;
-    } else {
-      return <CiTempHigh style={{ marginRight: "8px" }} />;
-    }
+    if (description.includes("clear"))
+      return <FaSun className="text-yellow-500 text-4xl" />;
+    if (description.includes("clouds"))
+      return <FaCloud className="text-gray-500 text-4xl" />;
+    if (description.includes("rain"))
+      return <FaUmbrella className="text-blue-500 text-4xl" />;
+    return <CiLocationOn className="text-gray-500 text-4xl" />;
   };
 
   return (
-    <div className="flex flex-col">
-      <h1 className="flex items-center">
-        <CiLocationOn style={{ marginRight: "8px" }} />
-        {weather.name}
-      </h1>
-      <p className="flex items-center">
-        {getWeatherIcon()}
-        {weather.main.temp}°C
+    <div className="max-w-md mx-auto bg-base rounded-lg shadow-md p-6 space-y-4">
+      <div className="flex items-center space-x-2">
+        <CiLocationOn className="text-blue-500 text-2xl" />
+        <h1 className="text-xl font-medium text-white">{weather.name}</h1>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <div>{getWeatherIcon()}</div>
+        <div className="text-5xl font-bold text-white">
+          {weather.main.temp}°C
+        </div>
+      </div>
+
+      <p className="text-center text-white capitalize">
+        {weather.weather[0].description}
       </p>
+
+      <div className="flex justify-between text-sm text-white">
+        <div>
+          <p>Humidity</p>
+          <p className="text-lg font-medium">{weather.main.humidity}%</p>
+        </div>
+        <div>
+          <p>Wind</p>
+          <p className="text-lg font-medium">{weather.wind.speed} m/s</p>
+        </div>
+      </div>
     </div>
   );
 };

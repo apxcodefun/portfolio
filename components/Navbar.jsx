@@ -19,18 +19,15 @@ const Navbar = () => {
         theme === "light" ? "bg-white text-black" : "bg-gray-800 text-white"
       }`}
     >
-      {/* Logo */}
-      <h1 className="text-3xl">Ardiansyah Putra</h1>
-
       {/* Menu dengan efek glassy */}
       <ul className="flex space-x-4 ">
-        <li>
+        <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
           <Link href="/">Home</Link>
         </li>
-        <li>
-          <Link href="/skill">Skill</Link>
+        <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
+          <Link href="/about">About</Link>
         </li>
-        <li>
+        <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
           <Link href="/contact">Contact</Link>
         </li>
       </ul>

@@ -13,7 +13,7 @@ const Social = () => {
           alt="GitHub"
           width={30}
           height={30}
-          className="bg-sky-500 rounded-badge"
+          className="bg-sky-500 rounded-badge hover:scale-105 transition-transform duration-300 ease-in-out"
         />
       </a>
       <a
@@ -26,7 +26,7 @@ const Social = () => {
           alt="Instagram"
           width={30}
           height={30}
-          className="bg-sky-500 rounded-full"
+          className="bg-sky-500 rounded-full hover:scale-105 transition-transform duration-300 ease-in-out"
         />
       </a>
       {/* Add more social media icons */}
