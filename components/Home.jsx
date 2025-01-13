@@ -19,19 +19,13 @@ const HomePage = () => {
             <p className="mb-4 text-white pacifico">Junior Web Developer</p>
             {/* Tombol */}
             <div className="flex space-x-7">
-              <button
-                className="btn rounded-badge outline w-[175px]"
-                href="/files/cv.pdf"
-              >
+              <button className="btn rounded-badge outline w-[175px]">
                 <FaCloudDownloadAlt />
-                Get My CV
+                <a href="/files/cv.pdf">Get My CV</a>
               </button>
-              <button
-                className="btn outline rounded-badge w-[175px]"
-                href="https://github.com/apxcodefun"
-              >
+              <button className="btn outline rounded-badge w-[175px]">
                 <FaGithub />
-                Go To My Github
+                <a href="https://github.com/apxcodefun">Go To My Github</a>
               </button>
             </div>
           </div>
