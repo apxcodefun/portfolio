@@ -34,7 +34,7 @@ const Navbar = () => {
 
       {/* Data Theme And GitHub Account */}
       <div className="flex items-center space-x-4">
-        <ThemeChange />
+        {/* <ThemeChange /> */}
         <Link href="https://github.com/apxcodefun">
           <FaGithub className="w-6 h-6" />
         </Link>
