@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Loading from "./loading"; // Import komponen loading
+import LoadingPage from "./loading"; // Import komponen loading
 
 export const metadata = {
   title: "My Site",
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="forest">
       <body>
         {loading ? ( // Jika loading, tampilkan komponen Loading
-          <Loading />
+          <LoadingPage />
         ) : (
           <>
             <Navbar />
