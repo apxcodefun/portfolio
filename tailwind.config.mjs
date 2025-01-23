@@ -9,6 +9,6 @@ export default {
     require('daisyui'),
     require('@tailwindcss/forms'),
   ],daisyUi: {
-    themes: ['forest', 'light']
+    themes: ['fantasy', 'light']
   }
 };

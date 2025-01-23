@@ -20,8 +20,8 @@ const Navbar = () => {
       }`}
     >
       {/* Menu dengan efek glassy */}
-      <ul className="flex space-x-4 ">
-        <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
+      <ul className="flex justify-">
+        <li className="hover:scale-105 transition-transform duration-300 ease-in-out gap-4">
           <Link href="/">Home</Link>
         </li>
         <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
