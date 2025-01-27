@@ -1,44 +1,27 @@
-"use client";
-import { useEffect, useState } from "react";
-import { FaGithub } from "react-icons/fa";
-import ThemeChange from "./../components/ThemeChange";
+import { MdArrowOutward } from "react-icons/md";
 import Link from "next/link";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState("forest");
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "forest";
-    setTheme(savedTheme);
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  }, []);
-
   return (
-    <nav
-      className={`flex justify-between items-center p-4 rounded-badge ${
-        theme === "light" ? "bg-white text-black" : "bg-gray-800 text-white"
-      }`}
-    >
-      {/* Menu dengan efek glassy */}
-      <ul className="flex justify-">
-        <li className="hover:scale-105 transition-transform duration-300 ease-in-out gap-4">
+    <nav className="flex items-center justify-between px-6 py-4  top-0 sticky mt-5">
+      <ul className="flex space-x-6 bg-gradient-to-r from-sblack to-sblu h-11 items-center rounded-full px-8 py-2 shadow-lg mx-auto">
+        <li className="hover:text-blue-400 cursor-pointer transition-colors duration-300">
           <Link href="/">Home</Link>
         </li>
-        <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
-          <Link href="/about">About</Link>
+        <li className="hover:text-blue-400 cursor-pointer transition-colors duration-300">
+          <Link href="/about">About Me</Link>
         </li>
-        <li className="hover:scale-105 transition-transform duration-300 ease-in-out">
-          <Link href="/contact">Contact</Link>
+        <li className="hover:text-blue-400 cursor-pointer transition-colors duration-300">
+          <Link href="/skill">Skill</Link>
+        </li>
+        <li className="hover:text-blue-400 cursor-pointer transition-colors duration-300">
+          <Link href="/project">Project</Link>
         </li>
       </ul>
 
-      {/* Data Theme And GitHub Account */}
-      <div className="flex items-center space-x-4">
-        {/* <ThemeChange /> */}
-        <Link href="https://github.com/apxcodefun">
-          <FaGithub className="w-6 h-6" />
-        </Link>
-      </div>
+      <button className="flex items-center text-black px-4 py-2 bg-white rounded-full hover:bg-blue-600">
+        Contact <MdArrowOutward className="ml-2" />
+      </button>
     </nav>
   );
 };

@@ -1,50 +1,66 @@
-"use client";
-import Image from "next/image";
-import Social from "@/components/Social";
-import Skill from "@/components/Skill";
-import { ReactTyped } from "react-typed";
-
 const AboutPage = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-8 px-4">
-        {/* Text */}
-        <div className="flex-1 text-center md:text-left space-y-4">
-          <h1 className="text-sky-700 text-5xl font-bold">Selamat Datang</h1>
-          <p className="text-lg">
-            Saya: <span className="font-semibold">Ardiansyah Putra</span>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Text Section */}
+        <div className="mt-10">
+          <h1 className="text-5xl font-bold mb-2">About Me!</h1>
+          <p className="text-xl mb-2">
+            I am familiar with JavaScript and Tailwind CSS, driven by a strong
+            dedication to learning and a proactive approach to adapting to new
+            technologies.
           </p>
-          <ReactTyped
-            strings={["Junior Web Developer", "FullStack Developer"]}
-            typeSpeed={40}
-            backSpeed={50}
-            loop
-          />
-          <h2 className="text-2xl font-semibold mt-4">About Me</h2>
-          <p className="text-gray-600">
-            Seorang Junior Web Developer dengan fokus pada pengembangan situs
-            web yang responsif dan user-friendly. Saya selalu berusaha belajar
-            dan berkembang untuk menambah kemampuan saya dan juga untuk
-            menciptakan solusi digital yang kreatif dan efektif. Dengan
-            perhatian pada detail dan pengalaman pengguna.
+          <p className="mt-4 text-xl">
+            Programming is my passion, which is why I have been actively working
+            while pursuing my academic career.
           </p>
-          <Social />
+          <p className="mt-4 text-xl">
+            Additionally, I enjoy playing Mobile Games and exploring more about
+            programming, because I know if I stop learning my skill will get
+            stuck.
+          </p>
+
+          {/* Button and GitHub Icon in the same row */}
+          <div className="flex items-center gap-4 mt-10">
+            <button className="bg-gradient-to-r from-white to-black text-black py-2 rounded-full px-7 pr-14">
+              Show My Work
+            </button>
+            <div className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+              <a href="https://github.com/apxcodefun">
+                <img
+                  src="/images/github.png"
+                  alt="Github"
+                  className="w-6 h-6"
+                />
+              </a>
+            </div>
+            <div className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+              <a href="https://instagram.com/ardiansyah__putra">
+                <img
+                  src="/images/instagram.png"
+                  alt="Instagram"
+                  className="w-6 h-6"
+                />
+              </a>
+            </div>
+            <div className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+              <a href="mailto:ardiansyah.ap8@gmail.com">
+                <img src="/images/mail.png" alt="Mail" className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
         </div>
-        {/* Image */}
-        <div className="flex-1 flex justify-center">
-          <Image
-            src="/images/profile.jpg"
-            alt="Test"
-            width={450}
-            height={500}
-            className="rounded-full hover:scale-105 transition-transform duration-300 ease-in-out"
+
+        {/* Image Section */}
+        <div>
+          <img
+            className="object-cover w-full md:w-[720px] h-[500px] rounded-lg"
+            src="/images/about.png"
+            alt="Nature City"
           />
         </div>
-        {/* Skill */}
       </div>
-      <Skill />
     </>
   );
 };
-
 export default AboutPage;

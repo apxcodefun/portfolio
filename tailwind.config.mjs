@@ -5,10 +5,13 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  plugins: [
-    require('daisyui'),
-    require('@tailwindcss/forms'),
-  ],daisyUi: {
-    themes: ['fantasy', 'light']
-  }
+  theme: {
+    extend: {
+      colors: {
+        sblack: "#090A12",
+        sblu: "#3F2F71",
+      },
+    },
+  },
+  plugins: [],
 };
