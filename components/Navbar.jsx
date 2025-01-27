@@ -39,16 +39,16 @@ const Navbar = () => {
         className="md:hidden flex flex-col items-center cursor-pointer space-y-2"
         onClick={toggleMenu}
       >
-        <div className="w-6 h-0.5 bg-black"></div>
-        <div className="w-6 h-0.5 bg-black"></div>
-        <div className="w-6 h-0.5 bg-black"></div>
+        <div className="w-6 h-0.5 bg-white"></div>
+        <div className="w-6 h-0.5 bg-white"></div>
+        <div className="w-6 h-0.5 bg-white"></div>
       </div>
 
       {/* Menu untuk Mobile (Hamburger Menu) */}
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:hidden absolute top-16 right-0 bg-gradient-to-r from-sblack to-sblu py-4 px-6 rounded-xl shadow-lg`}
+        } md:hidden absolute left-0 top-full bg-gradient-to-r from-sblack to-sblu py-4 px-6 rounded-xl shadow-lg w-full`}
       >
         <ul className="space-y-4">
           <li className="hover:text-blue-400 cursor-pointer transition-colors duration-300">

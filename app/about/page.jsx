@@ -1,22 +1,22 @@
 const AboutPage = () => {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="flex flex-col md:flex-row gap-4">
         {/* Text Section */}
-        <div className="mt-10">
-          <h1 className="text-5xl font-bold mb-2">About Me!</h1>
-          <p className="text-xl mb-2">
+        <div className="mt-10 flex flex-col justify-center md:mt-0 order-2 md:order-1">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-2">About Me!</h1>
+          <p className="text-xl sm:text-2xl mb-2">
             I am familiar with JavaScript and Tailwind CSS, driven by a strong
             dedication to learning and a proactive approach to adapting to new
             technologies.
           </p>
           <br />
-          <p className="mt-4 text-xl">
+          <p className="mt-4 sm:text-2xl text-xl">
             Programming is my passion, which is why I have been actively working
             while pursuing my academic career.
           </p>
           <br />
-          <p className="mt-4 text-xl">
+          <p className="mt-4 sm:text-2xl text-xl">
             Additionally, I enjoy playing Mobile Games and exploring more about
             programming, because I know if I stop learning my skill will get
             stuck.
@@ -53,10 +53,9 @@ const AboutPage = () => {
           </div>
         </div>
 
-        {/* Image Section */}
-        <div>
+        <div className="w-full md:w-[720px] flex justify-center mb-6 md:mb-0 order-1 md:order-2">
           <img
-            className="object-cover w-full md:w-[720px] h-[500px] rounded-lg"
+            className="object-cover object-center w-full h-[500px] sm:h-[350px] md:h-[500px] rounded-lg"
             src="/images/about.png"
             alt="Nature City"
           />
