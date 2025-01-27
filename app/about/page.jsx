@@ -10,10 +10,12 @@ const AboutPage = () => {
             dedication to learning and a proactive approach to adapting to new
             technologies.
           </p>
+          <br />
           <p className="mt-4 text-xl">
             Programming is my passion, which is why I have been actively working
             while pursuing my academic career.
           </p>
+          <br />
           <p className="mt-4 text-xl">
             Additionally, I enjoy playing Mobile Games and exploring more about
             programming, because I know if I stop learning my skill will get

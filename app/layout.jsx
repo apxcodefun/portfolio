@@ -12,7 +12,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className="h-screen w-full flex flex-col bg-cover bg-center bg-no-repeat px-6 md:px-24 lg:px-40"
-        style={{ backgroundImage: "url('/images/bg.jpg')" }}
+        style={{
+          backgroundImage: "url('/images/bg.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+        }}
       >
         <Navbar />
         {children}
