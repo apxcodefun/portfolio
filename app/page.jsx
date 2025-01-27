@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <div className="flex flex-col md:flex-row items-center gap-4 px-4">
         {/* Text Section */}
-        <div className="flex flex-col justify-center mt-10 md:mt-0">
+        <div className="flex flex-col justify-center mt-10 md:mt-0 order-2 md:order-1">
           <h1 className="text-4xl sm:text-5xl font-bold mb-2">
             Hi, I'm Ardiansyah Putra
           </h1>
@@ -21,10 +21,11 @@ const Home = () => {
             <IoIosArrowRoundForward className="absolute right-1 bg-black text-white rounded-full h-9 w-9" />
           </button>
         </div>
+
         {/* Image Section */}
-        <div className="w-full md:w-[720px] flex justify-center mb-6 md:mb-0">
+        <div className="w-full md:w-[720px] flex justify-center mb-6 md:mb-0 order-1 md:order-2">
           <img
-            className="object-cover w-full h-[300px] sm:h-[400px] rounded-lg"
+            className="object-cover w-full h-[300px] sm:h-[250px] rounded-lg"
             src="/images/home1.png"
             alt="Nature City"
           />

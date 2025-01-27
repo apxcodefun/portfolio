@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
           backgroundImage: "url('/images/bg.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center center",
+          backgroundAttachment: "fixed", // Agar background tetap pada posisi yang benar saat scroll
         }}
       >
         <Navbar />

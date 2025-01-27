@@ -48,7 +48,7 @@ const Navbar = () => {
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:hidden absolute top-14 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-sblack to-sblu py-4 px-6 rounded-xl shadow-lg`}
+        } md:hidden absolute top-16 right-0 bg-gradient-to-r from-sblack to-sblu py-4 px-6 rounded-xl shadow-lg`}
       >
         <ul className="space-y-4">
           <li className="hover:text-blue-400 cursor-pointer transition-colors duration-300">
