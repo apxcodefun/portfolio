@@ -10,6 +10,7 @@ export default {
       colors: {
         sblack: "#090A12",
         sblu: "#3F2F71",
+        lavender: "#E4A0F7",
       },
     },
   },
