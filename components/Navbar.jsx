@@ -12,7 +12,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 sticky top-0 mt-5">
+    <nav className="flex items-center justify-between px-6 py-4 sticky top-0 mt-5 z-50">
       {/* Menu di Desktop */}
       <ul className="hidden md:flex space-x-6 bg-gradient-to-r from-sblack to-sblu h-11 items-center rounded-full px-8 py-2 shadow-lg mx-auto">
         <li className="hover:text-lavender cursor-pointer transition-colors duration-300">
