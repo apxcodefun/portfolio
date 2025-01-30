@@ -10,9 +10,10 @@ export default {
       colors: {
         sblack: "#090A12",
         sblu: "#3F2F71",
+        smid: "#26114A",
         lavender: "#E4A0F7",
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

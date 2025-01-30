@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Ardiansyah Putra",
@@ -12,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className="h-screen w-full flex flex-col bg-cover bg-center bg-no-repeat px-6 md:px-24 lg:px-40"
+        className="min-h-screen w-full flex flex-col bg-cover bg-center bg-no-repeat px-6 md:px-24 lg:px-40"
         style={{
           backgroundImage: "url('/images/bg.jpg')",
           backgroundSize: "cover",
@@ -21,7 +20,8 @@ export default function RootLayout({ children }) {
         }}
       >
         <Navbar />
-        {children}
+        <div className="flex-grow">{children}</div>
+        {/* Footer dengan background transparan */}
       </body>
     </html>
   );
