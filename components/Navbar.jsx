@@ -11,6 +11,9 @@ const Navbar = () => {
   // Fungsi untuk toggle menu
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // Fungsi untuk menutup menu setelah klik item
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <nav className="flex items-center justify-between px-6 py-4 sticky top-0 mt-5 z-50">
       {/* Menu di Desktop */}
@@ -51,16 +54,28 @@ const Navbar = () => {
         } md:hidden absolute left-0 top-full bg-gradient-to-r from-sblack to-sblu py-4 px-6 rounded-xl shadow-lg w-full`}
       >
         <ul className="space-y-4">
-          <li className="hover:text-blue-400 cursor-pointer transition-colors duration-300">
+          <li
+            className="hover:text-blue-400 cursor-pointer transition-colors duration-300"
+            onClick={closeMenu} // Menutup menu saat item diklik
+          >
             <Link href="/">Home</Link>
           </li>
-          <li className="hover:text-blue-400 cursor-pointer transition-colors duration-300">
+          <li
+            className="hover:text-blue-400 cursor-pointer transition-colors duration-300"
+            onClick={closeMenu} // Menutup menu saat item diklik
+          >
             <Link href="/about">About Me</Link>
           </li>
-          <li className="hover:text-blue-400 cursor-pointer transition-colors duration-300">
+          <li
+            className="hover:text-blue-400 cursor-pointer transition-colors duration-300"
+            onClick={closeMenu} // Menutup menu saat item diklik
+          >
             <Link href="/skill">Skill</Link>
           </li>
-          <li className="hover:text-blue-400 cursor-pointer transition-colors duration-300">
+          <li
+            className="hover:text-blue-400 cursor-pointer transition-colors duration-300"
+            onClick={closeMenu} // Menutup menu saat item diklik
+          >
             <Link href="/project">Project</Link>
           </li>
         </ul>
