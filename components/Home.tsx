@@ -15,7 +15,7 @@ const HomeComponent = () => {
     }
   }, []);
 
-  const handleNameSubmit = (e) => {
+  const handleNameSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (tempName.trim()) {
       setUserName(tempName.trim());
