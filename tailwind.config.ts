@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss";
+
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,12 +9,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        sblack: "#090A12",
-        sblu: "#3F2F71",
-        smid: "#26114A",
-        lavender: "#E4A0F7",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
     },
   },
-  plugins: [require("daisyui")],
-};
+  plugins: [],
+} satisfies Config;
