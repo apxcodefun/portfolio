@@ -1,30 +1,24 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 
-const Sidebar = () => {
-  const [active, setActive] = useState("home");
-
+const Sidebar = ({ active }: { active: string }) => {
   useEffect(() => {
-    // Buat instance IntersectionObserver
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Jika section terlihat di viewport, set active ke section tersebut
-            setActive(entry.target.id);
+            console.log(`Section in view: ${entry.target.id}`);
           }
         });
       },
-      { threshold: 0.5 } // set threshold 50% supaya section terlihat setidaknya setengah untuk mengubah aktif
+      { threshold: 0.5 }
     );
 
-    // Semua elemen yang akan di-observe
     const sections = document.querySelectorAll("section");
     sections.forEach((section) => observer.observe(section));
 
     return () => {
-      // Clean up observer saat komponen unmount
       observer.disconnect();
     };
   }, []);
@@ -47,7 +41,6 @@ const Sidebar = () => {
             >
               <a
                 href={`#${item.name}`}
-                onClick={() => setActive(item.name)}
                 className="flex items-center justify-center w-12 h-12 rounded-full group-hover:bg-gray-700/50 relative z-10"
               >
                 <Image
